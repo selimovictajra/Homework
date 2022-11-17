@@ -21,7 +21,10 @@ public class App {
             }
         }
         catch (RuntimeException exception) {
-            System.out.println("Error");
+            System.out.println("Invalid input.\n" +
+                    "Please check if your input follows the instructions.\n" +
+                    "Attention: Your input can not have letters and it has to have a certain number of brackets.\n" +
+                    "Also, there has to be space between operators and numbers.\n");
         }
     }
 }
