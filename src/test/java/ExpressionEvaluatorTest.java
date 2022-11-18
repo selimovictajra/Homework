@@ -79,7 +79,7 @@ public class ExpressionEvaluatorTest {
     @Test
     public void EETest8 () {
         ExpressionEvaluator ex = new ExpressionEvaluator();
-        assertThrows(RuntimeException.class, () -> ex.evaluate (" ( 1 + 9 - sqrt * )"));
+        assertThrows(RuntimeException.class, () -> ex.evaluate (" ( 100 + 300 - 200)"));
     }
 
     /**
