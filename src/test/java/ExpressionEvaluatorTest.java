@@ -47,12 +47,12 @@ public class ExpressionEvaluatorTest {
     }
 
     /**
-     * tests sqrt operator
+     * tests expression with sqrt operator
      */
     @Test
     public void EETest5 () {
         ExpressionEvaluator ex = new ExpressionEvaluator();
-        assertEquals(ex.evaluate("( sqrt 9 )"), 3);
+        assertEquals(ex.evaluate("( ( 2 - 20 ) / sqrt ( 9 ) )"), -6);
     }
 
     /**
@@ -61,7 +61,7 @@ public class ExpressionEvaluatorTest {
     @Test
     public void EETest6 () {
         ExpressionEvaluator ex = new ExpressionEvaluator();
-        assertEquals(ex.evaluate("( 7 + ( ( ( 2 * 5 * 8 ) / ( 9 + ( 7 + ( 9 + ( ( ( sqrt 4 ) * 8 ) - 1 ) ) ) ) ) ) )"), 9);
+        assertEquals(ex.evaluate("( 7 + ( ( ( 2 * 5 * 8 ) / ( 9 + ( 7 + ( 9 + ( ( sqrt ( 4 ) * 8 ) - 1 ) ) ) ) ) ) )"), 9);
     }
 
     /**
