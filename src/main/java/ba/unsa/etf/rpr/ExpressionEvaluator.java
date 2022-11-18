@@ -33,10 +33,16 @@ public class ExpressionEvaluator {
      */
     public Double evaluate(String str) {
         String[] ss = str.split(" ");
+        int r_br = 0, l_br = 0, opr = 0;
         for (String passage : ss) {
-            if (!passage.equals("(") && !passage.equals("+") && !passage.equals("-") && !passage.equals("*") && !passage.equals("/") && !passage.equals("sqrt") && !passage.equals(")") && !isNumber(passage)) {
-                throw new RuntimeException();
-            }
+            if (passage.equals(")")) r_br++;
+            else if (passage.equals("(")) l_br++;
+            else if (passage.equals("+") || passage.equals("-") || passage.equals("*") || passage.equals("/") || passage.equals("sqrt")) opr++;
+        }
+        if (r_br != opr || l_br != r_br) throw new RuntimeException();
+        for (String passage : ss) {
+            if (!passage.equals("(") && !passage.equals("+") && !passage.equals("-") && !passage.equals("*") && !passage.equals("/")
+                    && !passage.equals("sqrt") && !passage.equals(")") && !isNumber(passage)) throw new RuntimeException();
             switch (passage) {
                 case "(":
                     break;
