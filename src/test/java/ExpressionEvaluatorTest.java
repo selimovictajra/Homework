@@ -25,7 +25,7 @@ public class ExpressionEvaluatorTest {
     @Test
     public void EETest2 () {
         ExpressionEvaluator ex = new ExpressionEvaluator();
-        assertEquals(ex.evaluate("( 5 - ( 7 - 1 ) )"), -1);
+        assertEquals(ex.evaluate("( 5 - ( 7 - 3 ) )"), 1);
     }
 
     /**
